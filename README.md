@@ -1,4 +1,4 @@
-test
+Pg Website Using CakePHP
 ====
 
-just for testing
+This is a Paying Guest Website generated using CakePHP
