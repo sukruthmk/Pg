@@ -1,8 +1,16 @@
 <?php
 
 class PgController extends AppController {
-    public $helpers = array('Html','Form');
     
+    public function getModule() {
+        return $this->Pg;
+    }
+    
+    public function setModule($moduleModel) {
+        $this->Pg = $moduleModel;
+    }
+
+
     public function index() {
         $this->viewClass = 'Index';
     }
