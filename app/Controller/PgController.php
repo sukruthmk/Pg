@@ -1,10 +1,10 @@
 <?php
 
-class PostsController extends AppController {
+class PgController extends AppController {
     public $helpers = array('Html','Form');
     
     public function index() {
-        $this->set('posts', $this->Post->find('all'));
+        $this->viewClass = 'Index';
     }
     
     public function view($id = NULL) {
