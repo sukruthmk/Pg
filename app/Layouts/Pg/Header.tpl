@@ -50,13 +50,14 @@
     <p class="titlecloseleftmenu">Locations</p>
     <ul>
         <li class="evidenceleftmenu"><p class="red">Bangalore<span class="bulletevidenceleftmenu"></span></p></li>
-        {foreach item=locations from=$PG_LOCATIONS}
-            <li><p><a href="#">{$locations['location']}</a></p></li>
+        {foreach item=location from=$PG_LOCATIONS}
+            <li><p><a href="#">{$location->getValue('location')}</a></p></li>
         {/foreach}
         <!--<li><p><a class="leftmenumore" href="#">See more</a></p></li>-->
     </ul>
 </div>
 <!--end left menu open-->
+
 <!--start header-->
 <header id="navigationmenu" class="fade-down animate1 navigationmenulight">
 	
@@ -67,31 +68,37 @@
     <!--end left menu close-->
     
     <!--start container-->
-    <div class="container">
+    <div class="container-fluid">
     
         <!--start navigation-->
     	<div class="row-fluid gridnavigation">
-        
-        	<img class="logo fade-up animate4" alt="" src="app/Layouts/resources/img/logo.png">
-        	<!--start navigation-->
-            <ul class="sf-menu" id="nav">
+            <div class="span1">
+            </div>
+            <div class="span2" >
+                <img class="logo fade-up animate4" alt="" src="app/Layouts/resources/img/logo.png">
+            </div>
+            <div class="span4">
+                <!--start navigation-->
+                <ul class="sf-menu nav" id="nav">
 
-                <li class="current yellow">
-                    <span class="menufilter"></span>
-                    <a href="index.html"><strong>HOME</strong></a>        
-                </li>
+                    <li class="current yellow">
+                        <span class="menufilter"></span>
+                        <a href="index.html"><strong>HOME</strong></a>        
+                    </li>
 
-                <li class="green">
-                    <span class="menufilter"></span>
-                    <a href="#"><strong>CONTACTS</strong></a>
-                </li>
+                    <li class="green">
+                        <span class="menufilter"></span>
+                        <a href="#"><strong>CONTACTS</strong></a>
+                    </li>
 
-            </ul>   
+                </ul>   
+            </div>
             <!--end navigationmenu-->	     
-        
-            <div class="rightsearchclose">
-                <img alt="" src="app/Layouts/resources/img/header/rightsearch.png">
-            </div>  
+            <div class="span2">
+                <div class="rightsearchclose">
+                    <img alt="" src="app/Layouts/resources/img/header/rightsearch.png">
+                </div>  
+            </div>
         </div>
         <!--end navigation-->
 
