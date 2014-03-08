@@ -8,7 +8,7 @@ class IndexView extends Viewer {
         $moduleModel = Pg::getCleanInstance();
         $pgLocations = $moduleModel->getPgLocations();
         $topPgs = $moduleModel->getTopPgs();
-        $viewer->assign('PG_LOCATIONS', $pgLocations);
+        $viewer->assign('MODULE', $moduleModel);
         $viewer->assign('TOP_PGS', $topPgs);
         $viewer->display('IndexView.tpl');
     }

@@ -58,11 +58,30 @@ class Pg extends AppModel {
         return $records;
     }
     
+    public function getPgCitys() {
+        $db = $this->getDBInstance();
+        $tableName = 'pg_city';
+        $result = $db->fetchAll('SELECT *FROM pg_city',array());
+        $data = $this->getQueryResult($result, $tableName);
+        return $data;
+    }
+
+
     public function getPgLocations() {
+        $citys = $this->getPgCitys();
+        $data = array();
+        foreach ($citys as $city) {
+            $data[$city['city']] = $this->getPgLocationsByCity($city['city']);
+        }
+        
+        return $data;
+    }
+    
+    public function getPgLocationsByCity($city) {
         $db = $this->getDBInstance();
         $tableName = 'pg_details';
-        $sql = 'SELECT DISTINCT location FROM '.$tableName.' WHERE city = ?';
-        $result = $db->fetchAll($sql,array('Bangalore')); //TODO: add different cities
+        $sql = 'SELECT DISTINCT location FROM pg_details WHERE city = ?';
+        $result = $db->fetchAll($sql,array($city)); 
         $data = $this->getQueryResult($result, $tableName);
         
         return $this->getModuleInstanceFromData($data);

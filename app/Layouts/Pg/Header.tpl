@@ -7,24 +7,15 @@
  
     <meta charset="utf-8">  
     
-    <title>Paying Guest</title> <!--insert your title here-->  
-    <meta name="description" content="Payig Guest"> <!--insert your description here-->  
+    <title>Guest Me</title> <!--insert your title here-->  
+    <meta name="description" content="Paying Guest"> <!--insert your description here-->  
     <meta name="author" content="sukruth"> <!--insert your name here-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--meta responsive-->
     
   	<!--START CSS--> 
     <link rel="stylesheet" href="app/Layouts/resources/css/style.css"> <!--main-->
-    <link rel="stylesheet" href="app/Layouts/resources/css/grid.css"> <!--grid-->
-    <link rel="stylesheet" href="app/Layouts/resources/css/responsive.css"> <!--responsive-->
-    <link rel="stylesheet" href="app/Layouts/resources/rs-plugin/css/settings.css" media="screen" /> <!--rev slider-->
-    <link rel="stylesheet" href="app/Layouts/resources/showbizpro/css/settings.css" media="screen" /> <!--showbiz-->
-    <link rel="stylesheet" href="app/Layouts/resources/css/animate.css"> <!--animate-->
-    <link rel="stylesheet" href="app/Layouts/resources/css/superfish.css" media="screen"> <!--menu-->
-    <link rel="stylesheet" href="app/Layouts/resources/css/fancybox/jquery.fancybox.css"> <!--main fancybox-->
-    <link rel="stylesheet" href="app/Layouts/resources/css/fancybox/jquery.fancybox-thumbs.css"> <!--fancybox thumbs-->
-    <link rel="stylesheet" href="app/Layouts/resources/css/isotope.css"> <!--isotope-->
-    <link rel="stylesheet" href="app/Layouts/resources/css/flexslider.css"> <!--flexslider-->
-    <link rel="stylesheet" href="app/Layouts/resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/Layouts/resources/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/Layouts/resources/libs/bootstrap/css/bootstrap-responsive.css">
     <!--END CSS-->
     
     <!--google fonts-->
@@ -33,95 +24,47 @@
     <!--[if lt IE 9]>  
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
     <![endif]-->  
-    
-    <!--FAVICONS-->
-    <link rel="shortcut icon" href="app/Layouts/resources/img/favicon/favicon.ico">
-    <link rel="apple-touch-icon" href="app/Layouts/resources/img/favicon/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="app/Layouts/resources/img/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-touch-icon-114x114.png">
-    <!--END FAVICONS-->
-    
+     
+    <script src="app/Layouts/resources/libs/jquery/jquery/jquery.min.js"></script> <!--Jquery-->
+    <!--<script src="app/Layouts/resources/libs/jquery/jquery-ui/jquery-ui.js"></script> Jquery UI-->
+    <script type="text/javascript" src="app/Layouts/resources/libs/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="app/Layouts/resources/libs/jquery/slidebars/slidebars.min.css">
+    <link rel="stylesheet" href="app/Layouts/resources/libs/jquery/slidebars/theme/slidebars-theme.css">
     
 </head>  
-<body id="startpage">
+<body>
 
 <!--start left menu open-->
-<div class="leftmenuopen leftmenuopendark"> <!--leftmenuopenlight or leftmenuopendark-->
-    <p class="titlecloseleftmenu">Locations</p>
-    <ul>
-        <li class="evidenceleftmenu"><p class="red">Bangalore<span class="bulletevidenceleftmenu"></span></p></li>
-        {foreach item=location from=$PG_LOCATIONS}
-            <li><p><a href="#">{$location->getValue('location')}</a></p></li>
-        {/foreach}
-        <!--<li><p><a class="leftmenumore" href="#">See more</a></p></li>-->
-    </ul>
-</div>
+{include file="leftmenu.tpl"}
 <!--end left menu open-->
 
 <!--start header-->
-<header id="navigationmenu" class="fade-down animate1 navigationmenulight">
-	
-    <!--start left menu close-->
-    <div class="leftmenuclose">
-    	<img alt="" src="app/Layouts/resources/img/header/leftmenuclose.png">
-    </div>
-    <!--end left menu close-->
-    
-    <!--start container-->
+<header class="navbar navbar-inverse navmenulight">
     <div class="container-fluid">
-    
-        <!--start navigation-->
-    	<div class="row-fluid gridnavigation">
-            <div class="span1">
+        <div class="row-fluid">
+            <div class="span1 leftmenu">
+                <div class="sb-toggle-left">
+                    <img alt="" src="app/Layouts/resources/img/header/leftmenuclose.png">
+                </div>
             </div>
-            <div class="span2" >
-                <img class="logo fade-up animate4" alt="" src="app/Layouts/resources/img/logo.png">
+            <div class="span2">
+                <a class="logo" href="#">
+                    <img alt="" src="app/Layouts/resources/img/logo.png">
+                </a>
             </div>
-            <div class="span4">
-                <!--start navigation-->
-                <ul class="sf-menu nav" id="nav">
-
+            <div class="span8">
+                <ul class="menu nav">
                     <li class="current yellow">
                         <span class="menufilter"></span>
-                        <a href="index.html"><strong>HOME</strong></a>        
+                        <a href="#">Home</a>
                     </li>
-
                     <li class="green">
                         <span class="menufilter"></span>
-                        <a href="#"><strong>CONTACTS</strong></a>
+                        <a href="#">Contact</a>
                     </li>
-
-                </ul>   
-            </div>
-            <!--end navigationmenu-->	     
-            <div class="span2">
-                <div class="rightsearchclose">
-                    <img alt="" src="app/Layouts/resources/img/header/rightsearch.png">
-                </div>  
+                </ul>
             </div>
         </div>
-        <!--end navigation-->
-
-    </div>
-    <!--end container--> 
-    
+    </div>    
 </header>
 <!--end header-->
-
-<!--start right search-->
-<div class="rightsearchopen">
-
-    <!--search form-->
-    <form role="search" method="get" id="searchform" class="searchform" action="#">
-        <div>
-            <label class="screen-reader-text" for="s">SEARCH</label>
-            <input type="text" value="" name="s" id="s" />
-            <input type="submit" id="searchsubmit" value="Search" />
-        </div>
-    </form>
-    <!--end search form-->
-    
-    <span class="rightsearchopenclose"></span>
-     
-</div>
-<!--end right search-->
